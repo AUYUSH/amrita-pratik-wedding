@@ -1,0 +1,408 @@
+/* Custom Luxury Marwari Wedding Invitation Styles */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-dark: #0d0705;
+  --color-surface: rgba(22, 14, 10, 0.85);
+  --color-surface-card: rgba(30, 19, 14, 0.92);
+  --color-gold-accent: #c8a45d;
+  --color-gold-light: #fdf0a6;
+  --color-gold-dim: #9a7428;
+  --color-gold-border: rgba(200, 164, 93, 0.38);
+  --color-gold-glow: rgba(200, 164, 93, 0.15);
+  --color-gold-glow-heavy: rgba(200, 164, 93, 0.45);
+  --color-name-text: #fff3c4;
+  --color-cream: #f8f4ec;
+  
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-body: 'Raleway', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background Film Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='1'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Typography Helpers */
+.font-display { font-family: var(--font-display); }
+.font-cinzel { font-family: var(--font-cinzel); }
+.font-body { font-family: var(--font-body); }
+
+/* Golden Decorative Dividers */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+.gold-divider .line {
+  height: 1px;
+  width: 5rem;
+  background: linear-gradient(to right, transparent, var(--color-gold-dim), transparent);
+}
+.gold-divider .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold-accent);
+  box-shadow: 0 0 8px var(--color-gold-accent);
+}
+
+/* Golden Corner Flourish Bracket */
+.corner-bracket {
+  position: relative;
+}
+.corner-bracket::before, .corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--color-gold-accent);
+  pointer-events: none;
+}
+.corner-bracket::before {
+  top: 6px;
+  left: 6px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.corner-bracket::after {
+  bottom: 6px;
+  right: 6px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Cover Screen Modal Overlay */
+#cover-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--color-dark);
+  transition: opacity 0.9s ease-in-out, visibility 0.9s ease-in-out;
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+}
+
+#cover-screen.hidden-cover {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('../assets/images/shiv_parvati_cover.jpg');
+  background-size: cover;
+  background-position: center top;
+  filter: brightness(0.68) contrast(1.08);
+}
+
+.cover-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 7, 5, 0.2) 0%,
+    rgba(13, 7, 5, 0.45) 45%,
+    rgba(13, 7, 5, 0.92) 85%,
+    rgba(13, 7, 5, 0.98) 100%
+  );
+}
+
+.cover-frame-border {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid var(--color-gold-border);
+  z-index: 2;
+  pointer-events: none;
+}
+@media (min-width: 640px) {
+  .cover-frame-border { inset: 24px; }
+}
+
+.cover-content {
+  position: relative;
+  z-index: 10;
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Shimmer Button */
+.btn-gold-shimmer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.5rem;
+  border: 1px solid var(--color-gold-accent);
+  background: rgba(22, 14, 10, 0.85);
+  color: var(--color-gold-light);
+  font-family: var(--font-cinzel);
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  font-size: 0.75rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(200, 164, 93, 0.2);
+}
+
+.btn-gold-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(253, 240, 166, 0.4) 50%, transparent 70%);
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.8s ease;
+}
+
+.btn-gold-shimmer:hover::before {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+.btn-gold-shimmer:hover {
+  background: rgba(200, 164, 93, 0.25);
+  box-shadow: 0 0 28px rgba(200, 164, 93, 0.45);
+}
+
+/* Floating Audio Control Button */
+#audio-control {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.25rem;
+  z-index: 9999;
+}
+.audio-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-gold-border);
+  background: rgba(18, 11, 8, 0.85);
+  backdrop-filter: blur(12px);
+  color: var(--color-gold-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.audio-btn:hover {
+  transform: scale(1.1);
+  border-color: var(--color-gold-accent);
+}
+.audio-btn.playing {
+  animation: pulseGold 2s infinite ease-in-out;
+}
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 164, 93, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(200, 164, 93, 0); }
+}
+
+/* Main Site Container */
+main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-dark);
+}
+
+/* Section Styling */
+section {
+  position: relative;
+  width: 100%;
+  padding: 4.5rem 1.25rem;
+}
+@media (min-width: 640px) {
+  section { padding: 6rem 2rem; }
+}
+
+/* Hero Section with Video */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+  background: #000;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(13, 7, 5, 0.4) 0%, rgba(13, 7, 5, 0.88) 100%);
+}
+
+/* Section Card Box */
+.gold-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-gold-border);
+  backdrop-filter: blur(10px);
+  padding: 2rem 1.5rem;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+@media (min-width: 640px) {
+  .gold-card { padding: 3rem 2.5rem; }
+}
+
+/* Countdown Timer */
+.timer-box {
+  width: clamp(70px, 18vw, 100px);
+  height: clamp(80px, 20vw, 110px);
+  border: 1px solid var(--color-gold-border);
+  background: var(--color-surface);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.timer-num {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  color: var(--color-name-text);
+  line-height: 1;
+}
+.timer-label {
+  font-family: var(--font-cinzel);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--color-gold-accent);
+  text-transform: uppercase;
+  margin-top: 0.35rem;
+}
+
+/* Scratch Card Canvas */
+.scratch-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 16 / 7;
+  margin: 2rem auto 1rem;
+  border: 1px solid var(--color-gold-border);
+  background: rgba(22, 14, 10, 0.95);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+}
+.scratch-secret {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(135deg, #1f140e 0%, #3a2517 100%);
+  color: var(--color-gold-light);
+}
+.scratch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* Form inputs */
+.gold-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  background: rgba(13, 7, 5, 0.7);
+  border: 1px solid var(--color-gold-border);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.gold-input:focus {
+  border-color: var(--color-gold-accent);
+  box-shadow: 0 0 10px rgba(200, 164, 93, 0.2);
+}
+
+/* Smooth Fade In Scroll Animation */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Celebration Toast Notification */
+.toast-popup {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: rgba(30, 19, 14, 0.95);
+  border: 1px solid var(--color-gold-accent);
+  color: var(--color-gold-light);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-family: var(--font-cinzel);
+  letter-spacing: 0.15em;
+  z-index: 10000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.toast-popup.show {
+  transform: translateX(-50%) translateY(0);
+}

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="goldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf0a6" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#c8a45d" stop-opacity="0.6"/>
+      <stop offset="80%" stop-color="#9a7428" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0d0705" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe699"/>
+      <stop offset="30%" stop-color="#d4af37"/>
+      <stop offset="70%" stop-color="#aa7c11"/>
+      <stop offset="100%" stop-color="#f5d061"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Aura Glow Background -->
+  <circle cx="250" cy="250" r="220" fill="url(#goldGlow)"/>
+
+  <!-- Outer Decorative Celestial Circle -->
+  <circle cx="250" cy="250" r="200" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-dasharray="8, 6" opacity="0.7"/>
+  <circle cx="250" cy="250" r="190" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Shiv-Parvati Sacred Emblem -->
+  <g filter="url(#glow)">
+    <!-- Crescent Moon (Chandra) -->
+    <path d="M 235 110 A 35 35 0 0 0 265 145 A 32 32 0 0 1 235 110 Z" fill="url(#goldGrad)" />
+    
+    <!-- Third Eye (Trinetra) & Tilak -->
+    <ellipse cx="250" cy="165" rx="6" ry="12" fill="url(#goldGrad)"/>
+    <path d="M 230 165 Q 250 155 270 165 Q 250 175 230 165 Z" fill="url(#goldGrad)" opacity="0.6"/>
+    
+    <!-- Trishul (Shiva's Trident) and Damru -->
+    <!-- Central Blade -->
+    <path d="M 250 80 L 257 125 L 243 125 Z" fill="url(#goldGrad)"/>
+    <!-- Left Blade -->
+    <path d="M 225 100 Q 220 125 242 130 Q 235 115 225 100 Z" fill="url(#goldGrad)"/>
+    <!-- Right Blade -->
+    <path d="M 275 100 Q 280 125 258 130 Q 265 115 275 100 Z" fill="url(#goldGrad)"/>
+    <!-- Trishul Shaft -->
+    <line x1="250" y1="125" x2="250" y2="340" stroke="url(#goldGrad)" stroke-width="4"/>
+
+    <!-- Damru at center of shaft -->
+    <path d="M 235 220 L 265 220 L 235 245 L 265 245 Z" fill="url(#goldGrad)"/>
+    <circle cx="250" cy="232.5" r="4" fill="#120b08"/>
+
+    <!-- Divine Parvati Lotus Flower & Suhag Ornament Motif -->
+    <!-- Left Lotus Petals -->
+    <path d="M 250 300 C 220 280 190 320 250 350 C 310 320 280 280 250 300 Z" fill="url(#goldGrad)" opacity="0.85"/>
+    <path d="M 250 310 C 230 295 210 325 250 345 C 290 325 270 295 250 310 Z" fill="#ffe699"/>
+
+    <!-- Shiva-Parvati Twin Hearts & Golden Aura Rays -->
+    <path d="M 250 200 C 230 180 195 200 195 225 C 195 255 250 280 250 280 C 250 280 305 255 305 225 C 305 200 270 180 250 200 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.9"/>
+    <path d="M 250 208 C 235 192 208 208 208 227 C 208 250 250 270 250 270 C 250 270 292 250 292 227 C 292 208 265 192 250 208 Z" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.75"/>
+
+    <!-- Hindi Sacred Text: ॐ नमः शिवाय / शिव पार्वती आशीर्वाद -->
+    <text x="250" y="385" font-family="'Cinzel', 'Cormorant Garamond', serif" font-size="20" fill="url(#goldGrad)" font-weight="bold" text-anchor="middle" letter-spacing="4">
+      ॐ नमः शिवाय
+    </text>
+    <text x="250" y="415" font-family="'Cinzel', serif" font-size="13" fill="#ffe699" text-anchor="middle" letter-spacing="3" opacity="0.9">
+      SHIV PARVATI BLESSINGS
+    </text>
+  </g>
+
+  <!-- Corner Flourish Accents -->
+  <g fill="url(#goldGrad)" opacity="0.75">
+    <circle cx="250" cy="40" r="3"/>
+    <circle cx="250" cy="460" r="3"/>
+    <circle cx="40" cy="250" r="3"/>
+    <circle cx="460" cy="250" r="3"/>
+  </g>
+</svg>
