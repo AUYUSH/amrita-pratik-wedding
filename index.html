@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Amrita & Pratik — Luxury Wedding Invitation</title>
+  <meta name="description" content="Join us as Amrita & Pratik celebrate their wedding at The Karoli Resort and Banquet, Noida Sector 135 on 26th November 2026." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/ganesha.png" type="image/png" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <!-- Film Grain Texture Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast-notification" class="toast-popup"></div>
+
+  <!-- Background Audio Player & Toggle Button -->
+  <audio id="wedding-audio" src="./assets/audio/wedding-music.mp3" preload="auto" loop></audio>
+  <div id="audio-control">
+    <button id="audio-toggle-btn" class="audio-btn" aria-label="Toggle Music" tabindex="0">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </button>
+  </div>
+
+  <!-- 1. COVER / SPLASH SCREEN MODAL (First Page with Uploaded Shiv Parvati Background) -->
+  <div id="cover-screen">
+    <div class="cover-bg"></div>
+    <div class="cover-overlay-gradient"></div>
+    <div class="cover-frame-border"></div>
+
+    <div class="cover-content">
+      <!-- Sacred Symbol & Ganesha/Shiv Parvati Blessing -->
+      <p style="font-size: 2rem; color: var(--color-gold-accent); margin-bottom: 0.2rem; filter: drop-shadow(0 0 10px rgba(200, 164, 93, 0.8));">ॐ</p>
+      <p class="font-display" style="font-size: 1.4rem; color: var(--color-gold-accent); font-style: italic; margin-bottom: 0.2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">
+        श्री गणेशाय नमः ✦ शिव-पार्वती कृपा
+      </p>
+      <p class="font-cinzel" style="font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">
+        With The Blessings Of Lord Shiva, Parvati &amp; Lord Ganesha
+      </p>
+
+      <!-- Couple Names -->
+      <h1 class="font-display" style="font-size: clamp(3.2rem, 11vw, 5.5rem); line-height: 0.9; color: var(--color-name-text); text-shadow: 0 4px 20px rgba(0,0,0,0.95);">
+        Amrita
+      </h1>
+      <div class="font-display" style="font-size: 1.8rem; color: var(--color-gold-accent); margin: 0.4rem 0;">❦</div>
+      <h1 class="font-display" style="font-size: clamp(3.2rem, 11vw, 5.5rem); line-height: 0.9; color: var(--color-name-text); text-shadow: 0 4px 20px rgba(0,0,0,0.95);">
+        Pratik
+      </h1>
+
+      <div class="gold-divider" style="margin: 1.25rem 0;">
+        <span class="line"></span>
+        <span class="dot"></span>
+        <span class="line"></span>
+      </div>
+
+      <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 2rem;">
+        शुभ विवाह ✦ मंगलम्
+      </p>
+
+      <!-- Open Invite Button -->
+      <button id="open-invite-btn" class="btn-gold-shimmer" tabindex="0">
+        <span>Open Invite</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN WEBSITE CONTENT -->
+  <main>
+    <!-- 2. HERO SECTION WITH VIDEO BACKGROUND -->
+    <section class="hero-section">
+      <video class="hero-video" autoplay muted loop playsinline poster="./assets/images/shiv_parvati_cover.jpg">
+        <source src="./assets/video/wedding.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="reveal-on-scroll" style="position: relative; z-index: 10; text-align: center; max-width: 600px;">
+        <!-- Floating Ganesha Emblem -->
+        <div style="width: 110px; height: 110px; margin: 0 auto 1.5rem; position: relative;">
+          <img src="./assets/images/ganesha.png" alt="Sri Ganesha" style="width: 100%; height: 100%; object-fit: contain; mix-blend-mode: screen; filter: drop-shadow(0 0 15px rgba(200, 164, 93, 0.9));" />
+        </div>
+
+        <p class="font-cinzel" style="font-size: 0.65rem; letter-spacing: 0.55em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 1rem;">
+          Celebrating Love &amp; Tradition
+        </p>
+        <h2 class="font-display" style="font-size: clamp(2.4rem, 7vw, 4.5rem); line-height: 1.1; color: var(--color-name-text); text-shadow: 0 4px 25px rgba(0,0,0,0.9); margin-bottom: 1.5rem;">
+          You Are Invited To Celebrate Love
+        </h2>
+
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+
+        <p class="font-display" style="font-size: 1.4rem; color: var(--color-gold-light); font-style: italic; margin-top: 0.5rem;">
+          Amrita &amp; Pratik
+        </p>
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.25em; color: var(--color-gold-accent); margin-top: 0.4rem;">
+          26th November 2026 • Noida Sector 135
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. SANSKRIT SHLOKA SECTION -->
+    <section style="background: radial-gradient(ellipse at center, var(--color-gold-glow) 0%, transparent 70%); border-top: 1px solid var(--color-gold-border); border-bottom: 1px solid var(--color-gold-border); text-align: center;">
+      <div class="reveal-on-scroll" style="max-width: 650px; margin: 0 auto;">
+        <span class="font-display" style="font-size: 2rem; color: var(--color-gold-light); filter: drop-shadow(0 0 10px var(--color-gold-glow-heavy));">ॐ</span>
+        
+        <div class="gold-divider" style="margin: 1rem 0;">
+          <span class="line"></span>
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+
+        <p class="font-display" style="font-size: clamp(1.1rem, 2.8vw, 1.35rem); color: var(--color-cream); font-style: italic; line-height: 1.8; margin-bottom: 0.5rem;">
+          वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।
+        </p>
+        <p class="font-display" style="font-size: clamp(1.1rem, 2.8vw, 1.35rem); color: var(--color-cream); font-style: italic; line-height: 1.8; margin-bottom: 1.25rem;">
+          निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥
+        </p>
+
+        <span class="font-cinzel" style="font-size: 0.65rem; color: var(--color-gold-accent); letter-spacing: 0.3em; text-transform: uppercase;">
+          — श्री गणेशाय नमः ✦ शिव-पार्वती कृपा —
+        </span>
+      </div>
+    </section>
+
+    <!-- 4. COUNTDOWN TIMER & SCRATCH CARD SECTION -->
+    <section style="text-align: center;">
+      <div class="reveal-on-scroll" style="max-width: 650px; margin: 0 auto;">
+        <p class="font-cinzel" style="font-size: 0.75rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 2rem;">
+          Until Two Souls Become One
+        </p>
+
+        <!-- Live Countdown Boxes -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: clamp(0.4rem, 2vw, 1.2rem); margin-bottom: 2.5rem;">
+          <div class="timer-box corner-bracket">
+            <span id="days" class="timer-num">00</span>
+            <span class="timer-label">Days</span>
+          </div>
+          <span style="color: var(--color-gold-accent); opacity: 0.5; font-size: 1.5rem;">:</span>
+          <div class="timer-box corner-bracket">
+            <span id="hours" class="timer-num">00</span>
+            <span class="timer-label">Hours</span>
+          </div>
+          <span style="color: var(--color-gold-accent); opacity: 0.5; font-size: 1.5rem;">:</span>
+          <div class="timer-box corner-bracket">
+            <span id="minutes" class="timer-num">00</span>
+            <span class="timer-label">Mins</span>
+          </div>
+          <span style="color: var(--color-gold-accent); opacity: 0.5; font-size: 1.5rem;">:</span>
+          <div class="timer-box corner-bracket">
+            <span id="seconds" class="timer-num">00</span>
+            <span class="timer-label">Secs</span>
+          </div>
+        </div>
+
+        <!-- Interactive Scratch Card (Reveals ONLY 26th Nov - 2026 as instructed) -->
+        <div class="scratch-container corner-bracket">
+          <div class="scratch-secret">
+            <p class="font-cinzel" style="font-size: 0.65rem; letter-spacing: 0.25em; color: var(--color-gold-accent); margin-bottom: 0.4rem;">✦ SAVE THE DATE ✦</p>
+            <h2 class="font-display" style="font-size: clamp(2.2rem, 6vw, 3rem); color: var(--color-name-text); letter-spacing: 0.05em; text-shadow: 0 0 15px rgba(200,164,93,0.5);">
+              26th Nov - 2026
+            </h2>
+          </div>
+          <canvas id="scratch-canvas" class="scratch-canvas"></canvas>
+        </div>
+        <p class="font-cinzel" style="font-size: 0.6rem; letter-spacing: 0.2em; color: var(--color-gold-accent); opacity: 0.85; margin-top: 0.5rem; text-transform: uppercase;">
+          ✦ Scratch The Golden Foil Above ✦
+        </p>
+
+        <!-- Add to Calendar Button -->
+        <div style="margin-top: 2.5rem;">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Amrita+%26+Pratik+Wedding&details=You+are+cordially+invited+to+celebrate+the+wedding+of+Amrita+%26+Pratik.+Tilak+9am%2C+Haldi+11am%2C+Mehndi+Shoot+2pm%2C+Varmala+7pm%2C+Phere+10pm.&location=The+Karoli+Resort+and+Banquet%2C+Noida+Sector+135&dates=20261126T090000%2F20261127T040000&ctz=Asia%2FKolkata" target="_blank" rel="noopener noreferrer" class="btn-gold-shimmer" style="text-decoration: none; padding: 0.8rem 1.8rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Add To Calendar</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. COUPLE DETAILS SECTION (वधू & वर परिचय) -->
+    <section style="background: rgba(18, 11, 8, 0.8); border-top: 1px solid var(--color-gold-border); border-bottom: 1px solid var(--color-gold-border);">
+      <div class="reveal-on-scroll" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 0.5rem;">
+          ✦ वधू &amp; वर परिचय ✦
+        </p>
+        <h2 class="font-display" style="font-size: 2.4rem; color: var(--color-name-text); margin-bottom: 2.5rem;">
+          Meet The Bride &amp; Groom
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: stretch;">
+          
+          <!-- Bride Card (Amrita) -->
+          <div class="gold-card corner-bracket" style="text-align: center;">
+            <span class="font-cinzel" style="font-size: 0.65rem; letter-spacing: 0.3em; color: var(--color-gold-accent); text-transform: uppercase;">वधू परिचय</span>
+            <h3 class="font-display" style="font-size: 2.2rem; color: var(--color-name-text); margin: 0.4rem 0 0.2rem;">Amrita</h3>
+            <p class="font-cinzel" style="font-size: 0.75rem; color: var(--color-gold-light); font-style: italic; margin-bottom: 1.25rem;">The Bride</p>
+            
+            <div style="border-top: 1px solid var(--color-gold-border); padding-top: 1rem; font-size: 0.9rem; line-height: 1.6; color: var(--color-cream);">
+              <p><strong>D/o:</strong> Smt. Asha Devi</p>
+              <p>&amp; Sh. Surendra Prasad</p>
+              <p style="color: var(--color-gold-accent); margin-top: 0.75rem; font-size: 0.85rem; line-height: 1.4;">
+                📍 <strong>Address:</strong><br />Telhara, Nalanda, Bihar - 801306
+              </p>
+            </div>
+          </div>
+
+          <!-- Groom Card (Pratik) -->
+          <div class="gold-card corner-bracket" style="text-align: center;">
+            <span class="font-cinzel" style="font-size: 0.65rem; letter-spacing: 0.3em; color: var(--color-gold-accent); text-transform: uppercase;">वर परिचय</span>
+            <h3 class="font-display" style="font-size: 2.2rem; color: var(--color-name-text); margin: 0.4rem 0 0.2rem;">Pratik</h3>
+            <p class="font-cinzel" style="font-size: 0.75rem; color: var(--color-gold-light); font-style: italic; margin-bottom: 1.25rem;">The Groom</p>
+            
+            <div style="border-top: 1px solid var(--color-gold-border); padding-top: 1rem; font-size: 0.9rem; line-height: 1.6; color: var(--color-cream);">
+              <p><strong>S/o:</strong> Late Smt. Laxmi Lata</p>
+              <p>&amp; Sh. Kamlesh Kumar Mahto</p>
+              <p style="color: var(--color-gold-accent); margin-top: 0.75rem; font-size: 0.85rem; line-height: 1.4;">
+                📍 <strong>Address:</strong><br />Buxar, Bihar
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="font-display" style="font-size: 1.1rem; color: var(--color-gold-light); font-style: italic; margin-top: 2.5rem;">
+          ✦ सर्वे भवन्तु सुखिनः — May all be happy.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. EVENT SCHEDULE SECTION (Updated Timings) -->
+    <section>
+      <div class="reveal-on-scroll" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 0.5rem;">
+          Celebrate With Us
+        </p>
+        <h2 class="font-display" style="font-size: 2.6rem; color: var(--color-name-text); margin-bottom: 0.5rem;">
+          Wedding Celebrations
+        </h2>
+        <p class="font-cinzel" style="font-size: 0.8rem; letter-spacing: 0.2em; color: var(--color-gold-light); margin-bottom: 3rem;">
+          Thursday · 26 November 2026
+        </p>
+
+        <!-- Events Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+
+          <!-- Event 1: Subha Tilak -->
+          <div class="gold-card corner-bracket" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 1.25rem;">
+            <div style="width: 75px; height: 75px; margin-bottom: 0.75rem; position: relative;">
+              <img src="./assets/images/venues/tilak.png" alt="Subha Tilak" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(200,164,93,0.5));" />
+            </div>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-name-text);">Subha Tilak</h3>
+            <p class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); font-weight: bold; margin: 0.3rem 0 0.8rem;">
+              ⏰ 9:00 AM
+            </p>
+            <p style="font-size: 0.85rem; color: var(--color-cream); font-style: italic; line-height: 1.4; margin-bottom: 1rem;">
+              "Traditional Tilak Welcome &amp; Auspicious Blessings"
+            </p>
+          </div>
+
+          <!-- Event 2: Haldi -->
+          <div class="gold-card corner-bracket" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 1.25rem;">
+            <div style="width: 75px; height: 75px; margin-bottom: 0.75rem; position: relative;">
+              <img src="./assets/images/venues/haldi.png" alt="Haldi Ceremony" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(200,164,93,0.5));" />
+            </div>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-name-text);">Haldi</h3>
+            <p class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); font-weight: bold; margin: 0.3rem 0 0.8rem;">
+              ⏰ 11:00 AM
+            </p>
+            <p style="font-size: 0.85rem; color: var(--color-cream); font-style: italic; line-height: 1.4; margin-bottom: 1rem;">
+              "Sacred Turmeric Ritual &amp; Joyous Beginnings"
+            </p>
+          </div>
+
+          <!-- Event 3: Mehndi Shoot -->
+          <div class="gold-card corner-bracket" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 1.25rem;">
+            <div style="width: 75px; height: 75px; margin-bottom: 0.75rem; position: relative;">
+              <img src="./assets/images/venues/tilak.png" alt="Mehndi Shoot" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(200,164,93,0.5));" />
+            </div>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-name-text);">Mehndi Shoot</h3>
+            <p class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); font-weight: bold; margin: 0.3rem 0 0.8rem;">
+              ⏰ 2:00 PM
+            </p>
+            <p style="font-size: 0.85rem; color: var(--color-cream); font-style: italic; line-height: 1.4; margin-bottom: 1rem;">
+              "Henna Celebration &amp; Photo Session"
+            </p>
+          </div>
+
+          <!-- Event 4: Varmala -->
+          <div class="gold-card corner-bracket" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 1.25rem;">
+            <div style="width: 75px; height: 75px; margin-bottom: 0.75rem; position: relative;">
+              <img src="./assets/images/venues/wedding.png" alt="Varmala & Dinner" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(200,164,93,0.5));" />
+            </div>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-name-text);">Varmala</h3>
+            <p class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); font-weight: bold; margin: 0.3rem 0 0.8rem;">
+              ⏰ 7:00 PM
+            </p>
+            <p style="font-size: 0.85rem; color: var(--color-cream); font-style: italic; line-height: 1.4; margin-bottom: 1rem;">
+              "Jaimala Ceremony Followed By Grand Dinner"
+            </p>
+          </div>
+
+          <!-- Event 5: Phere -->
+          <div class="gold-card corner-bracket" style="display: flex; flex-direction: column; align-items: center; padding: 2rem 1.25rem;">
+            <div style="width: 75px; height: 75px; margin-bottom: 0.75rem; position: relative;">
+              <img src="./assets/images/venues/wedding.png" alt="Phere Ceremony" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(200,164,93,0.5));" />
+            </div>
+            <h3 class="font-display" style="font-size: 1.65rem; color: var(--color-name-text);">Phere (शुभ विवाह)</h3>
+            <p class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); font-weight: bold; margin: 0.3rem 0 0.8rem;">
+              ⏰ 10:00 PM
+            </p>
+            <p style="font-size: 0.85rem; color: var(--color-cream); font-style: italic; line-height: 1.4; margin-bottom: 1rem;">
+              "Sacred Seven Pheras &amp; Wedding Rituals"
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAMILY SECTION -->
+    <section style="background: rgba(18, 11, 8, 0.85); border-top: 1px solid var(--color-gold-border); border-bottom: 1px solid var(--color-gold-border);">
+      <div class="reveal-on-scroll" style="max-width: 750px; margin: 0 auto; text-align: center;">
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 0.5rem;">
+          ✦ परिवार ✦
+        </p>
+        <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-name-text); margin-bottom: 2.5rem;">
+          Family &amp; Loved Ones
+        </h2>
+
+        <div class="gold-card corner-bracket" style="padding: 2.5rem 1.5rem;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; text-align: center;">
+            
+            <!-- Bride Family -->
+            <div>
+              <h4 class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">
+                Amrita's Family (वधू पक्ष)
+              </h4>
+              <p style="font-size: 1.05rem; color: var(--color-cream); margin-bottom: 0.4rem;">
+                <strong>Mother:</strong> Smt. Asha Devi
+              </p>
+              <p style="font-size: 1.05rem; color: var(--color-cream); margin-bottom: 0.4rem;">
+                <strong>Father:</strong> Sh. Surendra Prasad
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-gold-light); opacity: 0.9; margin-top: 0.6rem;">
+                📍 Telhara, Nalanda, Bihar - 801306
+              </p>
+            </div>
+
+            <!-- Groom Family -->
+            <div>
+              <h4 class="font-cinzel" style="font-size: 0.85rem; color: var(--color-gold-accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">
+                Pratik's Family (वर पक्ष)
+              </h4>
+              <p style="font-size: 1.05rem; color: var(--color-cream); margin-bottom: 0.4rem;">
+                <strong>Mother:</strong> Late Smt. Laxmi Lata
+              </p>
+              <p style="font-size: 1.05rem; color: var(--color-cream); margin-bottom: 0.4rem;">
+                <strong>Father:</strong> Sh. Kamlesh Kumar Mahto
+              </p>
+              <p style="font-size: 0.85rem; color: var(--color-gold-light); opacity: 0.9; margin-top: 0.6rem;">
+                📍 Buxar, Bihar
+              </p>
+            </div>
+
+          </div>
+
+          <div class="gold-divider" style="margin: 2rem 0 1rem;">
+            <span class="line"></span>
+            <span class="dot"></span>
+            <span class="line"></span>
+          </div>
+
+          <p class="font-cinzel" style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--color-gold-accent); text-transform: uppercase;">
+            With Love, Respect &amp; Best Wishes From All Relatives &amp; Friends
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. BLESSINGS / RSVP FORM SECTION -->
+    <section>
+      <div class="reveal-on-scroll" style="max-width: 580px; margin: 0 auto; text-align: center;">
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 0.5rem;">
+          Your Presence, Our Blessing
+        </p>
+        <h2 class="font-display" style="font-size: 2.5rem; color: var(--color-name-text); margin-bottom: 1rem;">
+          Send Blessings
+        </h2>
+        <p style="font-size: 0.9rem; color: var(--color-cream); opacity: 0.9; margin-bottom: 2rem;">
+          Your warm wishes and heartfelt blessings would mean the world to us as we begin this beautiful journey together.
+        </p>
+
+        <form id="blessing-form" class="gold-card corner-bracket" style="display: flex; flex-direction: column; gap: 1.2rem; text-align: left;">
+          <div>
+            <label style="font-size: 0.75rem; font-family: var(--font-cinzel); color: var(--color-gold-accent); letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">
+              Your Full Name *
+            </label>
+            <input type="text" id="guest-name" class="gold-input" placeholder="Enter your name" required />
+          </div>
+
+          <div>
+            <label style="font-size: 0.75rem; font-family: var(--font-cinzel); color: var(--color-gold-accent); letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">
+              Relation / Association
+            </label>
+            <input type="text" id="guest-relation" class="gold-input" placeholder="Family, Relative, Friend, Well Wisher..." />
+          </div>
+
+          <div>
+            <label style="font-size: 0.75rem; font-family: var(--font-cinzel); color: var(--color-gold-accent); letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-bottom: 0.4rem;">
+              Your Blessings / Message *
+            </label>
+            <textarea id="guest-message" class="gold-input" rows="4" placeholder="Write your heartfelt blessings for Amrita & Pratik..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-gold-shimmer" style="margin-top: 0.5rem; width: 100%;">
+            <span>Send Blessings</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- 9. VENUE LOCATION & WAYS TO REACH SECTION -->
+    <section style="background: radial-gradient(ellipse at center, var(--color-gold-glow) 0%, transparent 70%); border-top: 1px solid var(--color-gold-border);">
+      <div class="reveal-on-scroll" style="max-width: 750px; margin: 0 auto; text-align: center;">
+        <p class="font-cinzel" style="font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--color-gold-accent); margin-bottom: 0.5rem;">
+          Find Your Way To Us
+        </p>
+        <h2 class="font-display" style="font-size: 2.6rem; color: var(--color-name-text); margin-bottom: 1.5rem;">
+          The Venue &amp; Travel Guide
+        </h2>
+
+        <!-- Venue Card -->
+        <div class="gold-card corner-bracket" style="padding: 2.5rem 1.5rem; margin-bottom: 2rem;">
+          <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🏛️</div>
+          <h3 class="font-display" style="font-size: 1.85rem; color: var(--color-name-text);">
+            The Karoli Resort and Banquet
+          </h3>
+          <p style="font-size: 1.05rem; color: var(--color-gold-light); margin: 0.5rem 0 1.5rem;">
+            Noida Sector 135, Uttar Pradesh
+          </p>
+
+          <a href="https://www.google.com/maps/search/?api=1&query=The+Karoli+Resort+and+Banquet+Noida+Sector+135" target="_blank" rel="noopener noreferrer" class="btn-gold-shimmer" style="text-decoration: none; padding: 0.85rem 2rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 0.5rem;">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Get Directions On Google Maps</span>
+          </a>
+        </div>
+
+        <!-- Ways to Reach Card (New Delhi to Venue) -->
+        <div class="gold-card corner-bracket" style="padding: 2.5rem 1.5rem; text-align: left;">
+          <h4 class="font-cinzel" style="font-size: 1rem; color: var(--color-gold-accent); letter-spacing: 0.2em; text-transform: uppercase; text-align: center; margin-bottom: 1.5rem;">
+            📍 Ways To Reach From New Delhi
+          </h4>
+
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            
+            <!-- Cab Services -->
+            <div style="background: rgba(13, 7, 5, 0.6); border: 1px solid var(--color-gold-border); padding: 1.2rem; border-radius: 4px;">
+              <h5 style="font-family: var(--font-cinzel); color: var(--color-gold-light); font-size: 0.95rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                🚖 Cab / Auto Rides (24x7 Available)
+              </h5>
+              <p style="font-size: 0.88rem; color: var(--color-cream); line-height: 1.5;">
+                Direct cabs via <strong>Ola, Uber &amp; Rapido</strong> are conveniently available 24x7 from New Delhi Railway Station, IGI Airport, and across Delhi NCR directly to <em>The Karoli Resort and Banquet, Sector 135 Noida</em>.
+              </p>
+            </div>
+
+            <!-- Metro Route -->
+            <div style="background: rgba(13, 7, 5, 0.6); border: 1px solid var(--color-gold-border); padding: 1.2rem; border-radius: 4px;">
+              <h5 style="font-family: var(--font-cinzel); color: var(--color-gold-light); font-size: 0.95rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                🚇 Delhi Metro Route
+              </h5>
+              <p style="font-size: 0.88rem; color: var(--color-cream); line-height: 1.5; margin-bottom: 0.8rem;">
+                Take the Metro from <strong>New Delhi Station</strong> (Yellow Line) to Rajiv Chowk ➔ Blue Line to Botanical Garden / Noida Sector 52 ➔ Transfer to <strong>Aqua Line</strong> towards <strong>Noida Sector 137 / 142 Metro Station</strong>.
+              </p>
+
+              <!-- Metro Route Link -->
+              <a href="https://www.google.com/maps/dir/?api=1&origin=New+Delhi+Railway+Station&destination=The+Karoli+Resort+and+Banquet+Sector+135+Noida&travelmode=transit" target="_blank" rel="noopener noreferrer" class="btn-gold-shimmer" style="text-decoration: none; padding: 0.7rem 1.2rem; font-size: 0.68rem; display: inline-flex;">
+                <span>View Live Metro Route Map 🗺️</span>
+              </a>
+            </div>
+
+            <!-- Helpline / Contact Assistance -->
+            <div style="background: rgba(200, 164, 93, 0.12); border: 1px solid var(--color-gold-accent); padding: 1.25rem; border-radius: 4px; text-align: center;">
+              <p class="font-cinzel" style="font-size: 0.78rem; letter-spacing: 0.15em; color: var(--color-gold-light); text-transform: uppercase; margin-bottom: 0.4rem;">
+                📞 Need Any Travel Assistance?
+              </p>
+              <p style="font-size: 0.95rem; color: var(--color-cream); margin-bottom: 0.75rem;">
+                For any help or location guidance, please contact:
+              </p>
+              <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="tel:+917654246630" class="btn-gold-shimmer" style="text-decoration: none; padding: 0.6rem 1.2rem; font-size: 0.7rem;">
+                  📞 Call: +91 7654246630 (Ayush)
+                </a>
+                <a href="https://wa.me/917654246630?text=Hi%20Ayush,%20I%20need%20assistance%20reaching%20Amrita%20%26%20Pratik%20Wedding%20Venue" target="_blank" class="btn-gold-shimmer" style="text-decoration: none; padding: 0.6rem 1.2rem; font-size: 0.7rem; background: rgba(37, 211, 102, 0.2); border-color: #25d366; color: #a3ffc7;">
+                  💬 WhatsApp Ayush
+                </a>
+              </div>
+              <p style="font-size: 0.75rem; color: var(--color-gold-accent); margin-top: 0.6rem;">
+                (Bride's Brother — Ayush)
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 10. FOOTER / CLOSING SECTION -->
+    <footer style="border-top: 1px solid var(--color-gold-border); padding: 3.5rem 1.5rem; text-align: center; background-color: #080403;">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <span class="font-display" style="font-size: 1.8rem; color: var(--color-gold-light);">ॐ</span>
+        <p class="font-display" style="font-size: 1.25rem; color: var(--color-cream); font-style: italic; margin: 0.75rem 0;">
+          With the blessings of our families, we cordially invite you to celebrate with us.
+        </p>
+        <p class="font-cinzel" style="font-size: 0.75rem; letter-spacing: 0.25em; color: var(--color-gold-accent); text-transform: uppercase; margin-bottom: 1.5rem;">
+          Your Presence Will Make Our Special Day Truly Complete. ❤️
+        </p>
+        <div class="gold-divider">
+          <span class="line"></span>
+          <span class="dot"></span>
+          <span class="line"></span>
+        </div>
+        <p style="font-size: 0.75rem; color: var(--color-gold-dim); margin-top: 1rem;">
+          Amrita &amp; Pratik Wedding • 26th November 2026
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- JavaScript File -->
+  <script src="./js/script.js"></script>
+</body>
+</html>
