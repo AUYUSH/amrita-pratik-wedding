@@ -23,6 +23,7 @@
     const video = document.querySelector('.hero-video');
     const openInvite = document.getElementById('open-invite-btn');
     const audioButton = document.getElementById('audio-toggle-btn');
+    const coverScreen = document.getElementById('cover-screen');
     if (!audio || !video) return;
 
     // The cover portrait belongs only to the opening screen; show video after invite opens.
@@ -44,12 +45,20 @@
         throw error;
       });
 
-    const begin = () => ready.then(({ audio: loadedAudio, video: loadedVideo }) => {
+    const begin = (event) => {
+      event?.preventDefault();
+      event?.stopImmediatePropagation();
+      return ready.then(({ audio: loadedAudio, video: loadedVideo }) => {
+        coverScreen?.classList.add('hidden-cover');
       loadedVideo.play().catch(() => {});
       loadedAudio.play().then(() => {
         audioButton?.classList.add('playing');
       }).catch(() => {});
-    }).catch(() => {});
+      }).catch(() => {
+        // Never leave a guest trapped on the opening screen if media is unavailable.
+        coverScreen?.classList.add('hidden-cover');
+      });
+    };
 
     // Capture ensures these run before the original invite/audio handlers.
     openInvite?.addEventListener('click', begin, true);
